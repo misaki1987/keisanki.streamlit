@@ -35,17 +35,19 @@ sol1 = 0
 if hosp <= 30:
     sol1 = int(530000 * hosp /30)
 elif hosp <= 60:
-    sol1 = int(530000 + 480000 * (hosp-30)/30)
+    sol1 = 530000 + 480000 * (hosp-30)/30
 #通院慰謝料sol2の計算
 sol2 = 0
 if hosp == 0 :
     if gtth <= 30: sol2 = int(280000 * gtth /30)
 elif hosp > 0 :
     if hosp + gtth <= 30:
-        sol2 = (280000 * (hosp + gtth)/30) - (280000 * hosp /30)    
+        sol2 = (280000 * (hosp + gtth)/30) - (280000 * hosp /30)
+    elif hosp + gtth <= 60:
+        sol2 = (280000 + 240000 * ((hosp + gtth)-30)/30) - (280000 * hosp /30)
     
-"入院慰謝料：", sol1 
-"通院慰謝料：", sol2
+"入院慰謝料：", int(sol1) 
+"通院慰謝料：", int(sol2)
 ex1 = st.expander("慰謝料の計算式")
 ex1.write("赤本基準の場合、慰謝料は・・・です。")
 
