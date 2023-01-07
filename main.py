@@ -15,7 +15,7 @@ gtth = st.sidebar.selectbox(
 )
 grade = st.sidebar.selectbox(
     "認定されている後遺障害等級を指定してください。",
-    list(range(0,14))
+    list(range(0,15))
 )
 condition = st.sidebar.slider("過失割合は？",0,100,50)
 
@@ -30,33 +30,33 @@ sol3 = 0
 if grade == 0:
     sol3 = 0
 elif grade == 1:
-    sol3 = 1150
+    sol3 = 11500000
 elif grade == 2:
-    sol3 = 998
+    sol3 = 9980000
 elif grade == 3:
-    sol3 = 861
+    sol3 = 8610000
 elif grade == 4:
-    sol3 = 737
+    sol3 = 7370000
 elif grade == 5:
-    sol3 = 618
+    sol3 = 6180000
 elif grade == 6:
-    sol3 = 512
+    sol3 = 5120000
 elif grade == 7:
-    sol3 = 419
+    sol3 = 4190000
 elif grade == 8:
-    sol3 = 331
+    sol3 = 3310000
 elif grade == 9:
-    sol3 = 249
+    sol3 = 2490000
 elif grade == 10:
-    sol3 = 190
+    sol3 = 1900000
 elif grade == 11:
-    sol3 = 136
+    sol3 = 1360000
 elif grade == 12:
-    sol3 = 94
+    sol3 = 940000
 elif grade == 13:
-    sol3 = 57
+    sol3 = 570000
 elif grade == 14:
-    sol3 = 32
+    sol3 = 320000
 
 "入院慰謝料：", hosp * 4300
 "通院慰謝料：", gtth * 4300
@@ -119,5 +119,6 @@ elif grade == 14:
 "通院慰謝料：", int(sol2)
 ex1 = st.expander("慰謝料の計算式")
 ex1.write("赤本基準の場合、慰謝料は・・・です。")
+"後遺障害慰謝料", sol3
 
 st.write("作成中につき取扱注意")
