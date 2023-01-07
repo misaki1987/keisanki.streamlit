@@ -7,11 +7,11 @@ st.title("streamlitで作った計算機")
 """
 hosp = st.sidebar.selectbox(
     "あなたの入院日数をおしえてください。",
-    list(range(1,31))
+    list(range(0,31))
 )
 gtth = st.sidebar.selectbox(
     "あなたの通院日数を教えてください。",
-    list(range(1,31))
+    list(range(0,31))
 )
 condition = st.sidebar.slider("過失割合は？",0,100,50)
 
@@ -30,8 +30,22 @@ ex1.write("自賠責基準の場合、慰謝料は１日４３００円です。
 """
 ## 赤本基準
 """
-"入院慰謝料：", int(530000 * hosp / 30) 
-"通院慰謝料：", gtth
+#入院慰謝料sol1の計算
+sol1 = 0
+if hosp <= 30:
+    sol1 = int(530000 * hosp /30)
+elif hosp <= 60:
+    sol1 = int(530000 + 480000 * (hosp-30)/30)
+#通院慰謝料sol2の計算
+sol2 = 0
+if hosp == 0 :
+    if gtth <= 30: sol2 = int(280000 * gtth /30)
+elif hosp > 0 :
+    if hosp + gtth <= 30:
+        sol2 = (280000 * (hosp + gtth)/30) - (280000 * hosp /30)    
+    
+"入院慰謝料：", sol1 
+"通院慰謝料：", sol2
 ex1 = st.expander("慰謝料の計算式")
 ex1.write("赤本基準の場合、慰謝料は・・・です。")
 
