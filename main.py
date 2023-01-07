@@ -13,7 +13,7 @@ hosp = st.sidebar.selectbox(
     list(range(1,31))
 )
 gtth = st.sidebar.selectbox(
-    "あなたの通院日数を教えてください。"
+    "あなたの通院日数を教えてください。",
     list(range(1,31))
 )
 condition = st.sidebar.slider("過失割合は？",0,100,50)
