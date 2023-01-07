@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 import time
 
 st.title("streamlitで作った計算機")
@@ -120,5 +121,14 @@ elif grade == 14:
 ex1 = st.expander("慰謝料の計算式")
 ex1.write("赤本基準の場合、慰謝料は・・・です。")
 "後遺障害慰謝料", sol3
+
+"""
+## 比較表
+"""
+df = pd.DataFrame({
+    "1列目": [1, 2, 3, 4],
+    "2列目": [10, 20, 30, 40]
+#})
+
 
 st.write("作成中につき取扱注意")
