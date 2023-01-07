@@ -28,4 +28,4 @@ expander2.write("計算式の内容")
 expander3 = st.expander("計算式3")
 expander3.write("計算式３")
 
-作成中
+st.write("作成中")
