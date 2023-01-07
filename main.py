@@ -1,7 +1,4 @@
 import streamlit as st
-#import numpy as np
-#import pandas as pd
-#from PIL import Image
 import time
 
 st.title("streamlitで作った計算機")
@@ -25,17 +22,17 @@ condition = st.sidebar.slider("過失割合は？",0,100,50)
 """
 ## 自賠責基準（別表Ⅰ）
 """
-"入院慰謝料：", 530000 * hosp / 30 
-"通院慰謝料：", gtth
-ex1 = st.expander("計算式１")
+"入院慰謝料：", hosp * 4300
+"通院慰謝料：", gtth * 4300
+ex1 = st.expander("慰謝料の計算式")
 ex1.write("自賠責基準の場合、慰謝料は１日４３００円です。")
 
 """
 ## 赤本基準
 """
-"入院慰謝料：", hosp * 4300
-"通院慰謝料：", gtth * 4300
-ex1 = st.expander("計算式１")
-ex1.write("自賠責基準の場合、慰謝料は１日４３００円です。")
+"入院慰謝料：", int(530000 * hosp / 30) 
+"通院慰謝料：", gtth
+ex1 = st.expander("慰謝料の計算式")
+ex1.write("赤本基準の場合、慰謝料は・・・です。")
 
-st.write("作成中")
+st.write("作成中につき取扱注意")
